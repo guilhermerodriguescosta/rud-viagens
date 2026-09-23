@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RUD Viagens: roteiros de aventura, ecoturismo, lazer e cruzeiros para viver experiências inesquecíveis." />
+    <title>RUD Viagens | Sua próxima aventura começa aqui</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="RUD Viagens — início"><span>RUD</span> VIAGENS</a>
+      <button class="menu-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav id="menu" aria-label="Navegação principal">
+        <a href="#roteiros">Roteiros</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a>
+        <a class="nav-cta" data-whatsapp data-message="Olá! Quero planejar uma viagem com a RUD Viagens.">Fale conosco</a>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">ECOTURISMO • AVENTURA • LAZER</p>
+          <h1 id="hero-title">Sua próxima <em>aventura</em> começa aqui.</h1>
+          <p>Roteiros pelo Brasil, cruzeiros e viagens feitas para o seu jeito de explorar o mundo.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" data-whatsapp data-message="Olá! Quero montar uma viagem personalizada com a RUD Viagens.">Quero planejar minha viagem <span>→</span></a>
+            <a class="button button-ghost" href="#roteiros">Conhecer roteiros</a>
+          </div>
+        </div>
+        <div class="hero-badge"><strong>Do seu jeito.</strong><span>Com cuidado do início ao retorno.</span></div>
+      </section>
+
+      <section class="intro container" aria-labelledby="intro-title">
+        <p class="eyebrow">VIAJAR MUDA TUDO</p>
+        <h2 id="intro-title">Experiências que ficam com você, muito depois da volta.</h2>
+        <p>Da energia das chapadas ao conforto de um cruzeiro, cuidamos da viagem para você só se preocupar em viver cada momento.</p>
+      </section>
+
+      <section class="routes" id="roteiros" aria-labelledby="routes-title">
+        <div class="container section-heading"><div><p class="eyebrow">ESCOLHA SUA PRÓXIMA HISTÓRIA</p><h2 id="routes-title">Conheça nossos roteiros</h2></div><p>Valores referenciais, sujeitos a data, disponibilidade e personalização.</p></div>
+        <div class="route-grid container">
+          <article class="route-card"><img src="assets/galerias/chapada-diamantina/chapada-3.jpg" alt="Cachoeira da Chapada Diamantina" /><div class="card-content"><p class="tag">AVENTURA PELO BRASIL</p><h3>Chapada Diamantina</h3><p>Trilhas, cachoeiras e ecoturismo para uma experiência completa.</p><div class="card-footer"><span>A partir de <strong>R$ 1.619</strong></span><a href="roteiros/chapada-diamantina.html">Ver roteiro <span>→</span></a></div></div></article>
+          <article class="route-card"><img src="assets/galerias/chapada-das-mesas/mesas-2.jpg" alt="Paisagem da Chapada das Mesas" /><div class="card-content"><p class="tag">AVENTURA PELO BRASIL</p><h3>Chapada das Mesas</h3><p>Cachoeiras e paisagens surpreendentes no Maranhão.</p><div class="card-footer"><span>A partir de <strong>R$ 2.959</strong></span><a href="roteiros/chapada-das-mesas.html">Ver roteiro <span>→</span></a></div></div></article>
+          <article class="route-card"><img src="assets/galerias/jalapao/capa.png" alt="Arte original da RUD para o roteiro Jalapão" /><div class="card-content"><p class="tag">AVENTURA PELO BRASIL</p><h3>Jalapão</h3><p>Fervedouros, dunas e cenários que fogem do óbvio.</p><div class="card-footer"><span>A partir de <strong>R$ 2.299</strong></span><a href="roteiros/jalapao.html">Ver roteiro <span>→</span></a></div></div></article>
+          <article class="route-card"><img src="assets/galerias/msc-musica/capa.png" alt="Arte original da RUD para o cruzeiro MSC Música" /><div class="card-content"><p class="tag">CRUZEIROS</p><h3>MSC Música</h3><p>Conforto, sabor e entretenimento em alto-mar.</p><div class="card-footer"><span>A partir de <strong>R$ 2.606</strong></span><a href="roteiros/msc-musica.html">Ver roteiro <span>→</span></a></div></div></article>
+          <article class="route-card"><img src="assets/galerias/costa-diadema/capa.png" alt="Arte original da RUD para o cruzeiro Costa Diadema" /><div class="card-content"><p class="tag">CRUZEIROS</p><h3>Costa Diadema</h3><p>Quatro noites para relaxar, se divertir e navegar.</p><div class="card-footer"><span>A partir de <strong>R$ 3.116</strong></span><a href="roteiros/costa-diadema.html">Ver roteiro <span>→</span></a></div></div></article>
+          <article class="route-card route-card--insurance"><img src="assets/galerias/seguro-viagem/capa.png" alt="Arte original da RUD para seguro viagem" /><div class="card-content"><p class="tag">VIAJE TRANQUILO</p><h3>Seguro Viagem</h3><p>Cobertura e suporte para aproveitar cada destino com mais segurança.</p><div class="card-footer"><span>A partir de <strong>R$ 18</strong></span><a href="roteiros/seguro-viagem.html">Ver detalhes <span>→</span></a></div></div></article>
+        </div>
+      </section>
+
+      <section class="services container" id="servicos" aria-labelledby="services-title"><div class="section-heading"><div><p class="eyebrow">MAIS QUE UM DESTINO</p><h2 id="services-title">Uma viagem pensada para você.</h2></div></div><div class="service-grid"><article><span>01</span><h3>Viagens sob medida</h3><p>Seu estilo, tempo e orçamento transformados em uma proposta só sua.</p></article><article><span>02</span><h3>Roteiros de aventura</h3><p>Natureza, ecoturismo e experiências que conectam você ao Brasil.</p></article><article><span>03</span><h3>Cruzeiros</h3><p>Opções para descansar, celebrar e descobrir novos portos.</p></article><article><span>04</span><h3>Seguro viagem</h3><p>Mais tranquilidade para embarcar protegido em cada etapa.</p></article></div></section>
+
+      <section class="process" id="como-funciona" aria-labelledby="process-title"><div class="container"><p class="eyebrow">SIMPLES, HUMANO E DO SEU JEITO</p><h2 id="process-title">Como tiramos sua viagem do papel</h2><ol><li><span>1</span><div><h3>Conte o que você imagina</h3><p>Fale sobre destino, período, perfil e o que não pode faltar na sua viagem.</p></div></li><li><span>2</span><div><h3>Receba sua proposta</h3><p>Montamos opções alinhadas ao seu momento, sem roteiro engessado.</p></div></li><li><span>3</span><div><h3>Embarque com suporte</h3><p>Você viaja com a segurança de ter acompanhamento até o retorno.</p></div></li></ol><a class="button button-primary" data-whatsapp data-message="Olá! Quero contar como imagino minha próxima viagem.">Começar agora <span>→</span></a></div></section>
+
+      <section class="faq container" id="faq" aria-labelledby="faq-title"><p class="eyebrow">DÚVIDAS FREQUENTES</p><h2 id="faq-title">Antes de fazer as malas</h2><div class="faq-list"><details><summary>As viagens podem ser personalizadas?</summary><p>Sim. Ajustamos a proposta conforme seu perfil, datas, duração e preferências.</p></details><details><summary>Por que os valores aparecem como “a partir de”?</summary><p>Os valores variam conforme data, disponibilidade, composição do grupo e serviços escolhidos.</p></details><details><summary>O que está incluso no roteiro?</summary><p>Isso depende da experiência escolhida. Na proposta, detalhamos com clareza todos os itens incluídos e não incluídos.</p></details><details><summary>Como funcionam os pagamentos?</summary><p>As condições são apresentadas na proposta, conforme o roteiro e os fornecedores envolvidos.</p></details><details><summary>Posso cotar seguro viagem?</summary><p>Sim. Conte seu destino e período para receber uma cotação adequada à sua viagem.</p></details><details><summary>Como peço um orçamento?</summary><p>É só chamar a RUD Viagens pelo WhatsApp. A conversa começa sem compromisso.</p></details></div></section>
+
+      <section class="contact"><div class="container"><p class="eyebrow">A SUA HISTÓRIA COMEÇA AGORA</p><h2>Vamos encontrar a viagem que combina com você?</h2><a class="button button-light" data-whatsapp data-message="Olá! Quero planejar minha próxima viagem com a RUD Viagens.">Falar no WhatsApp <span>→</span></a></div></section>
+    </main>
+    <footer><a class="brand" href="#inicio"><span>RUD</span> VIAGENS</a><p>Experiências para sair do óbvio.</p><div><a data-whatsapp data-message="Olá! Quero falar com a RUD Viagens.">WhatsApp</a><a href="https://www.instagram.com/rud.viagens/" target="_blank" rel="noopener noreferrer">Instagram</a></div><small>© <span id="year"></span> RUD Viagens. Todos os direitos reservados.</small></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
