@@ -173,9 +173,9 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 const galleryImages = {
-  'chapada-diamantina.html': ['chapada-diamantina/foto-2.jpg', 'chapada-diamantina/foto-3.jpg', 'chapada-diamantina/foto-4.jpg', 'chapada-diamantina/foto-5.jpg'],
-  'chapada-das-mesas.html': ['chapada-das-mesas/foto-2.jpg', 'chapada-das-mesas/foto-3.jpg', 'chapada-das-mesas/foto-4.jpg', 'chapada-das-mesas/foto-5.jpg'],
-  'jalapao.html': ['jalapao/foto-2.jpg', 'jalapao/foto-3.jpg', 'jalapao/foto-4.jpg', 'jalapao/foto-5.jpg'],
+  'chapada-diamantina.html': ['chapada-diamantina/foto-1.jpg', 'chapada-diamantina/foto-2.jpg', 'chapada-diamantina/foto-3.jpg', 'chapada-diamantina/foto-4.jpg', 'chapada-diamantina/foto-5.jpg'],
+  'chapada-das-mesas.html': ['chapada-das-mesas/foto-1.jpg', 'chapada-das-mesas/foto-2.jpg', 'chapada-das-mesas/foto-3.jpg', 'chapada-das-mesas/foto-4.jpg', 'chapada-das-mesas/foto-5.jpg'],
+  'jalapao.html': ['jalapao/foto-1.jpg', 'jalapao/foto-2.jpg', 'jalapao/foto-3.jpg', 'jalapao/foto-4.jpg', 'jalapao/foto-5.jpg'],
 };
 
 const suggestedItineraries = {
@@ -294,8 +294,15 @@ document.head.append(itineraryStyles);
 
 if (galleryImages[currentPage]) {
   const gallery = document.createElement('section');
-  gallery.setAttribute('aria-label', 'Galeria do destino');
-  gallery.style.cssText = 'padding:3rem max(1rem,calc((100vw - 900px)/2));background:#f7f1e9;';
-  gallery.innerHTML = `<p style="color:#f36c21;font-weight:700;font-size:.75rem;letter-spacing:.12em">FOTOS DO DESTINO</p><h2 style="font-family:Georgia,serif;color:#093a62;font-size:2rem;margin:.3rem 0 1.5rem">Veja o que espera por você</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem">${galleryImages[currentPage].map((image, index) => `<img src="../assets/galerias/${image}" alt="Foto ${index + 1} do destino" style="width:100%;height:230px;object-fit:cover;border-radius:4px">`).join('')}</div>`;
+  gallery.className = 'destination-gallery';
+  gallery.setAttribute('aria-labelledby', 'gallery-title');
+  gallery.innerHTML = `<div class="gallery-heading"><div><p class="eyebrow">FOTOS DO DESTINO</p><h2 id="gallery-title">Veja o que espera por você</h2></div><div class="gallery-controls"><button type="button" class="gallery-button" data-gallery-prev aria-label="Foto anterior">←</button><button type="button" class="gallery-button" data-gallery-next aria-label="Próxima foto">→</button></div></div><div class="gallery-track" tabindex="0" aria-label="Carrossel de fotos do destino">${galleryImages[currentPage].map((image, index) => `<figure class="gallery-slide"><img src="../assets/galerias/${image}" alt="Foto ${index + 1} do destino"></figure>`).join('')}</div>`;
   document.querySelector('main').append(gallery);
+  const track = gallery.querySelector('.gallery-track');
+  gallery.querySelector('[data-gallery-prev]').addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+  gallery.querySelector('[data-gallery-next]').addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
 }
+
+const galleryStyles = document.createElement('style');
+galleryStyles.textContent = `.destination-gallery{padding:3.5rem max(1rem,calc((100vw - 900px)/2));background:#f7f1e9}.gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}.gallery-heading h2{margin:.25rem 0 0;color:#093a62;font:700 clamp(2rem,3.5vw,3rem)/1.08 Georgia,serif}.gallery-controls{display:flex;gap:.55rem}.gallery-button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #c8d8da;border-radius:50%;background:#fff;color:#093a62;font-size:1.25rem;font-weight:700;cursor:pointer}.gallery-button:hover{background:#093a62;color:#fff}.gallery-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 0 .75rem;scrollbar-width:thin;scrollbar-color:#f36c21 #e3e7e5}.gallery-slide{flex:0 0 min(78%,620px);margin:0;scroll-snap-align:start}.gallery-slide img{display:block;width:100%;height:360px;object-fit:cover;border-radius:14px;box-shadow:0 12px 28px #093a6224}@media(max-width:760px){.destination-gallery{padding:2.5rem 1rem}.gallery-heading{align-items:start}.gallery-button{width:38px;height:38px}.gallery-slide{flex-basis:88%}.gallery-slide img{height:285px}}`;
+document.head.append(galleryStyles);
