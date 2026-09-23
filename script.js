@@ -49,6 +49,10 @@ document.querySelectorAll('.whatsapp-action').forEach((link) => {
     link.insertAdjacentHTML('afterbegin', `<img class="whatsapp-action-icon" src="${assetPrefix}assets/icons/whatsapp.svg" alt="" aria-hidden="true">`);
   }
 });
+document.querySelectorAll('footer a[data-whatsapp], footer a[href*="instagram.com"]').forEach((link) => link.remove());
+document.querySelectorAll('footer div').forEach((group) => {
+  if (!group.textContent.trim()) group.remove();
+});
 quickContacts.innerHTML = `
   <a class="quick-contact quick-contact--instagram" href="https://www.instagram.com/rud.viagens/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Instagram da RUD Viagens" title="Instagram">
     <img src="${assetPrefix}assets/icons/instagram.svg" alt="" aria-hidden="true"><span>Instagram</span>
