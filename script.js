@@ -18,11 +18,24 @@ quickContacts.className = 'quick-contacts';
 quickContacts.setAttribute('aria-label', 'Canais de contato rápido');
 const assetPrefix = location.pathname.includes('/roteiros/') ? '../' : '';
 const isRoutePage = location.pathname.includes('/roteiros/');
+
+const routeCardImages = {
+  'chapada-diamantina.html': 'assets/galerias/chapada-diamantina/foto-1.jpg',
+  'chapada-das-mesas.html': 'assets/galerias/chapada-das-mesas/foto-1.jpg',
+  'jalapao.html': 'assets/galerias/jalapao/foto-1.jpg',
+};
+document.querySelectorAll('.route-card').forEach((card) => {
+  const routeLink = [...card.querySelectorAll('a[href]')].find((link) => link.getAttribute('href')?.includes('roteiros/'));
+  const image = card.querySelector('img');
+  const page = routeLink?.getAttribute('href')?.split('/').pop();
+  if (image && routeCardImages[page]) image.src = routeCardImages[page];
+});
+
 if (isRoutePage) {
   const routeImagePaths = {
-    'chapada-diamantina.jpg': '../assets/galerias/chapada-diamantina/capa.jpg',
-    'chapada-mesas.png': '../assets/galerias/chapada-das-mesas/capa.png',
-    'jalapao.png': '../assets/galerias/jalapao/capa.png',
+    'chapada-diamantina.jpg': '../assets/galerias/chapada-diamantina/foto-1.jpg',
+    'chapada-mesas.png': '../assets/galerias/chapada-das-mesas/foto-1.jpg',
+    'jalapao.png': '../assets/galerias/jalapao/foto-1.jpg',
     'msc-musica.png': '../assets/galerias/msc-musica/capa.png',
     'costa-diadema.png': '../assets/galerias/costa-diadema/capa.png',
     'seguro-viagem.png': '../assets/galerias/seguro-viagem/capa.png',
@@ -160,9 +173,9 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 const galleryImages = {
-  'chapada-diamantina.html': ['chapada-diamantina/chapada-1.jpg', 'chapada-diamantina/chapada-2.jpg', 'chapada-diamantina/chapada-3.jpg', 'chapada-diamantina/chapada-4.jpg'],
-  'chapada-das-mesas.html': ['chapada-das-mesas/mesas-1.jpg', 'chapada-das-mesas/mesas-2.jpg', 'chapada-das-mesas/mesas-3.jpg', 'chapada-das-mesas/mesas-4.jpg'],
-  'jalapao.html': ['jalapao/jalapao-1.png', 'jalapao/jalapao-2.png', 'jalapao/jalapao-3.png'],
+  'chapada-diamantina.html': ['chapada-diamantina/foto-2.jpg', 'chapada-diamantina/foto-3.jpg', 'chapada-diamantina/foto-4.jpg', 'chapada-diamantina/foto-5.jpg'],
+  'chapada-das-mesas.html': ['chapada-das-mesas/foto-2.jpg', 'chapada-das-mesas/foto-3.jpg', 'chapada-das-mesas/foto-4.jpg', 'chapada-das-mesas/foto-5.jpg'],
+  'jalapao.html': ['jalapao/foto-2.jpg', 'jalapao/foto-3.jpg', 'jalapao/foto-4.jpg', 'jalapao/foto-5.jpg'],
 };
 
 if (galleryImages[currentPage]) {
