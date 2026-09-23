@@ -178,6 +178,76 @@ const galleryImages = {
   'jalapao.html': ['jalapao/foto-2.jpg', 'jalapao/foto-3.jpg', 'jalapao/foto-4.jpg', 'jalapao/foto-5.jpg'],
 };
 
+const suggestedItineraries = {
+  'chapada-diamantina.html': {
+    title: 'Sugestão de roteiro dia a dia',
+    note: 'Proposta de 3 dias a partir de Lençóis. Trilhas, tempos de deslocamento e atrativos podem ser ajustados ao seu perfil e às condições do parque.',
+    days: [
+      ['Dia 1', 'Chegada em Lençóis e banho de rio', 'Transfer ou chegada em Lençóis, caminhada leve pelo centro histórico e circuito do Serrano ou Ribeirão do Meio para o primeiro banho de cachoeira.'],
+      ['Dia 2', 'Mirantes, grutas e paisagens', 'Saída para o Morro do Pai Inácio, com vista panorâmica da Chapada. Complete o dia com Pratinha e Lapa Doce, conforme a logística escolhida.'],
+      ['Dia 3', 'Poços cristalinos ou trilha de aventura', 'Escolha entre Poço Azul e Poço Encantado para uma experiência mais contemplativa, ou a trilha da Cachoeira da Fumaça para quem busca caminhada mais intensa.']
+    ]
+  },
+  'chapada-das-mesas.html': {
+    title: 'Sugestão de roteiro dia a dia',
+    note: 'Proposta de 4 dias com base em Carolina. Passeios de aventura e acessos off-road devem ser realizados com guia e conforme as condições locais.',
+    days: [
+      ['Dia 1', 'Carolina e pôr do sol no Portal', 'Chegada, acomodação e passeio leve pelo centro de Carolina. Ao fim do dia, siga para o Portal da Chapada ou Pedra Furada para contemplar o pôr do sol.'],
+      ['Dia 2', 'Complexo Pedra Caída', 'Dia dedicado às cachoeiras, trilhas e mirantes de Pedra Caída. Para quem quiser mais adrenalina, consulte opções de tirolesa e atividades guiadas.'],
+      ['Dia 3', 'Águas cristalinas em Riachão', 'Visite o Poço Azul e a Cachoeira de Santa Bárbara, com tempo para banho e caminhada na Reserva do Rio Cocal.'],
+      ['Dia 4', 'Cachoeiras de Carolina e retorno', 'Combine as Cachoeiras do Itapecuru com uma parada na Torre da Lua ou um passeio de despedida pela região antes do retorno.']
+    ]
+  },
+  'jalapao.html': {
+    title: 'Sugestão de roteiro dia a dia',
+    note: 'Proposta de 5 dias com veículo 4x4 e guia local. A ordem pode mudar por estrada, clima, vagas nos fervedouros e ponto de início da viagem.',
+    days: [
+      ['Dia 1', 'Ponte Alta e formações do Cerrado', 'Saída de Palmas para Ponte Alta, com parada no Cânion Suçuapara e na Pedra Furada para o pôr do sol.'],
+      ['Dia 2', 'Cachoeira da Velha e Dunas', 'Conheça a Cachoeira da Velha e a Prainha do Rio Novo. Termine o dia nas Dunas do Jalapão, em caminhada leve para ver o entardecer.'],
+      ['Dia 3', 'Fervedouros e Cachoeira do Formiga', 'Experimente dois fervedouros, como Buritizinho e Ceiça, e reserve tempo para banho na Cachoeira do Formiga.'],
+      ['Dia 4', 'Comunidade e mais natureza', 'Visite o povoado Mumbuca e escolha outro fervedouro para comparar as diferentes nascentes; a atividade pode incluir artesanato de capim-dourado.'],
+      ['Dia 5', 'Últimos banhos e volta a Palmas', 'Faça uma última parada em fervedouro ou mirante definido pelo guia e inicie o retorno, considerando o tempo de estrada até Palmas.']
+    ]
+  },
+  'msc-musica.html': {
+    title: 'Programação sugerida a bordo',
+    note: 'Exemplo para um minicruzeiro de 3 noites com Santos e Búzios. Horários de embarque, escalas e excursões dependem da saída confirmada pela companhia marítima.',
+    days: [
+      ['Dia 1', 'Embarque em Santos', 'Faça o check-in com antecedência, conheça a cabine, participe do exercício de segurança e escolha um restaurante ou show para a primeira noite a bordo.'],
+      ['Dia 2', 'Escala em Búzios', 'Aproveite a escala para caminhar pela Orla Bardot, curtir uma praia ou contratar uma excursão oficial. Retorne ao navio dentro do horário informado.'],
+      ['Dia 3', 'Dia de navegação', 'Desfrute de piscina, programação de entretenimento e gastronomia. À noite, escolha entre show, música ao vivo ou uma experiência especial a bordo.'],
+      ['Dia 4', 'Desembarque em Santos', 'Café da manhã, conferência de bagagem e desembarque no horário definido pela companhia.']
+    ]
+  },
+  'costa-diadema.html': {
+    title: 'Programação sugerida a bordo',
+    note: 'Exemplo para 4 noites entre Santos, Ilhabela e Itajaí. As escalas e os horários são confirmados exclusivamente na documentação da saída contratada.',
+    days: [
+      ['Dia 1', 'Embarque em Santos', 'Check-in, reconhecimento do navio, exercício de segurança e primeira noite com jantar e programação a bordo.'],
+      ['Dia 2', 'Escala em Ilhabela', 'Escolha entre praias, centro histórico ou excursão oficial. Planeje o retorno ao píer com antecedência.'],
+      ['Dia 3', 'Escala em Itajaí', 'Conheça Itajaí e Balneário Camboriú por conta própria ou em excursão. A cidade reúne praia, gastronomia e passeios panorâmicos.'],
+      ['Dia 4', 'Dia de navegação', 'Aproveite a estrutura do Costa Diadema: áreas ao ar livre, gastronomia, entretenimento e uma última noite especial no navio.'],
+      ['Dia 5', 'Retorno a Santos', 'Desembarque conforme o grupo e horário definidos pela companhia marítima.']
+    ]
+  }
+};
+
+const itinerary = suggestedItineraries[currentPage];
+if (itinerary) {
+  const section = document.createElement('section');
+  section.className = 'itinerary-section';
+  section.setAttribute('aria-labelledby', 'itinerary-title');
+  section.innerHTML = `<p class="eyebrow">PARA APROVEITAR MELHOR</p><h2 id="itinerary-title">${itinerary.title}</h2><p class="itinerary-note">${itinerary.note}</p><ol class="itinerary-days">${itinerary.days.map(([day, title, description]) => `<li><p>${day}</p><h3>${title}</h3><span>${description}</span></li>`).join('')}</ol>`;
+  const cruiseNotice = document.querySelector('.cruise-notice');
+  const destinationNotice = document.querySelector('.detail-body .notice');
+  if (cruiseNotice) cruiseNotice.before(section);
+  else if (destinationNotice) destinationNotice.before(section);
+}
+
+const itineraryStyles = document.createElement('style');
+itineraryStyles.textContent = `.itinerary-section{margin:3.5rem 0}.itinerary-section h2{font:700 clamp(2rem,3.5vw,3rem)/1.08 Georgia,serif;color:#093a62;margin:.35rem 0 .7rem}.itinerary-note{max-width:760px;color:#526a78;line-height:1.65}.itinerary-days{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.itinerary-days li{padding:1.3rem;background:#fff;border-radius:12px;border-top:3px solid #f36c21;box-shadow:0 10px 24px #093a6210}.itinerary-days p{margin:0;color:#f36c21;font-size:.68rem;font-weight:700;letter-spacing:.14em}.itinerary-days h3{margin:.4rem 0 .55rem;color:#093a62;font:700 1.25rem/1.15 Georgia,serif}.itinerary-days span{display:block;color:#526a78;font-size:.9rem;line-height:1.6}@media(max-width:760px){.itinerary-section{margin:2.5rem 0}.itinerary-days{grid-template-columns:1fr}.itinerary-days li{padding:1.1rem}}`;
+document.head.append(itineraryStyles);
+
 if (galleryImages[currentPage]) {
   const gallery = document.createElement('section');
   gallery.setAttribute('aria-label', 'Galeria do destino');
