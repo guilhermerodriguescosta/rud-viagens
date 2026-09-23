@@ -44,6 +44,11 @@ document.querySelectorAll('header > a:first-child:not(.brand)').forEach((brand) 
   brand.innerHTML = `<img class="brand-logo" src="${assetPrefix}assets/logo-rud-instagram.jpg" alt="RUD Viagens"><span class="brand-name">RUD <b>VIAGENS</b></span>`;
   brand.setAttribute('aria-label', 'RUD Viagens — início');
 });
+document.querySelectorAll('.whatsapp-action').forEach((link) => {
+  if (!link.querySelector('.whatsapp-action-icon')) {
+    link.insertAdjacentHTML('afterbegin', `<img class="whatsapp-action-icon" src="${assetPrefix}assets/icons/whatsapp.svg" alt="" aria-hidden="true">`);
+  }
+});
 quickContacts.innerHTML = `
   <a class="quick-contact quick-contact--instagram" href="https://www.instagram.com/rud.viagens/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Instagram da RUD Viagens" title="Instagram">
     <img src="${assetPrefix}assets/icons/instagram.svg" alt="" aria-hidden="true"><span>Instagram</span>
@@ -62,7 +67,7 @@ featuredCardStyles.textContent = `.feature-image{position:relative;height:230px;
 document.head.append(featuredCardStyles);
 
 const whatsappStyles = document.createElement('style');
-whatsappStyles.textContent = `.whatsapp-action{background:#25d366!important;color:#fff!important;border:1px solid #1aae56!important;border-radius:999px!important;box-shadow:0 5px 14px #16854d3d!important;text-shadow:none!important}.whatsapp-action:hover{background:#1eb95c!important;color:#fff!important;transform:translateY(-1px)}.whatsapp-action span{color:inherit!important}.button.whatsapp-action{padding:.9rem 1.35rem}.nav-cta.whatsapp-action{background:#25d366!important}.route-nav .route-message{color:#fff!important;background:#25d366!important}@media(max-width:760px){.route-nav .route-message{font-size:.72rem;padding:.65rem .75rem}.button.whatsapp-action{width:100%}}`;
+whatsappStyles.textContent = `.whatsapp-action{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;background:#fff!important;color:#16384d!important;border:1px solid #d5e4e2!important;border-radius:999px!important;box-shadow:0 7px 18px #093a6226!important;text-shadow:none!important;font-weight:700!important}.whatsapp-action:hover{background:#f3fbf7!important;color:#087f42!important;border-color:#8ad9aa!important;transform:translateY(-1px)}.whatsapp-action-icon{width:19px!important;height:19px!important;flex:0 0 19px!important}.whatsapp-action span{color:inherit!important}.button.whatsapp-action{padding:.9rem 1.35rem}.nav-cta.whatsapp-action{background:#fff!important}.route-nav .route-message{color:#16384d!important;background:#fff!important}@media(max-width:760px){.route-nav .route-message{font-size:.72rem;padding:.65rem .75rem}.button.whatsapp-action{width:100%}}`;
 document.head.append(whatsappStyles);
 
 if (isRoutePage) {
