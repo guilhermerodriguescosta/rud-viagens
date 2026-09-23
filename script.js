@@ -232,6 +232,50 @@ const suggestedItineraries = {
   }
 };
 
+const experienceHighlights = {
+  'chapada-diamantina.html': {
+    title: 'Uma imersão entre serras, água e história',
+    text: 'Você vai alternar caminhadas por paisagens monumentais, banhos em rios e poços cristalinos e momentos tranquilos em Lençóis. É uma viagem para desacelerar, respirar natureza e escolher o ritmo entre contemplação e aventura.',
+    tags: ['Trilhas e mirantes', 'Cachoeiras e poços', 'Cultura de Lençóis']
+  },
+  'chapada-das-mesas.html': {
+    title: 'Cerrado, quedas d’água e cenários surpreendentes',
+    text: 'A experiência combina estradas cênicas, formações de arenito, cachoeiras e piscinas naturais de água cristalina. Com base em Carolina, cada dia revela um novo contraste do cerrado maranhense.',
+    tags: ['Cachoeiras e cânions', 'Passeios 4x4', 'Pôr do sol no cerrado']
+  },
+  'jalapao.html': {
+    title: 'Aventura de verdade no coração do Cerrado',
+    text: 'Espere dias de estrada, natureza preservada e banhos que parecem impossíveis: fervedouros onde você flutua, dunas alaranjadas, rios e cachoeiras. A viagem é uma imersão em paisagens remotas, guiada e feita sem pressa.',
+    tags: ['Fervedouros', 'Dunas e pôr do sol', 'Expedição 4x4']
+  },
+  'msc-musica.html': {
+    title: 'Seu descanso, diversão e mar em uma única viagem',
+    text: 'Você embarca sem precisar desfazer malas: a cabine é sua base para curtir gastronomia, shows, piscinas e uma escala para explorar a costa. A proposta é escolher seu próprio ritmo entre programação a bordo e momentos de descanso.',
+    tags: ['Entretenimento a bordo', 'Gastronomia', 'Escala em Búzios']
+  },
+  'costa-diadema.html': {
+    title: 'Dias leves entre escalas e vida a bordo',
+    text: 'A bordo do Costa Diadema, a viagem mistura o prazer de navegar com paradas no litoral brasileiro. É uma experiência para aproveitar o navio, descobrir novos cenários e ter tempo para descansar entre uma escala e outra.',
+    tags: ['Lazer a bordo', 'Escalas no litoral', 'Conforto e gastronomia']
+  }
+};
+
+const experience = experienceHighlights[currentPage];
+if (experience) {
+  const section = document.createElement('section');
+  section.className = 'experience-intro';
+  section.setAttribute('aria-labelledby', 'experience-title');
+  section.innerHTML = `<div><p class="eyebrow">A EXPERIÊNCIA</p><h2 id="experience-title">${experience.title}</h2></div><div><p>${experience.text}</p><ul>${experience.tags.map((tag) => `<li>${tag}</li>`).join('')}</ul></div>`;
+  const cruiseDetails = document.querySelector('.cruise-details');
+  const destinationBody = document.querySelector('.detail-body');
+  if (cruiseDetails) cruiseDetails.before(section);
+  else if (destinationBody) destinationBody.before(section);
+}
+
+const experienceStyles = document.createElement('style');
+experienceStyles.textContent = `.experience-intro{padding:3.5rem max(1.5rem,calc((100vw - 1120px)/2));display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem;background:#fff;border-bottom:1px solid #d9e0e0}.experience-intro h2{margin:.35rem 0 0;color:#093a62;font:700 clamp(2rem,3.5vw,3.2rem)/1.08 Georgia,serif}.experience-intro>div:last-child>p{margin:0;color:#526a78;font-size:1.05rem;line-height:1.75}.experience-intro ul{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.3rem 0 0;padding:0;list-style:none}.experience-intro li{padding:.45rem .75rem;border:1px solid #cfe0e2;border-radius:999px;color:#093a62;font-size:.78rem;font-weight:700;background:#f5f9f9}@media(max-width:760px){.experience-intro{padding:2.5rem 1rem;grid-template-columns:1fr;gap:1.2rem}.experience-intro h2{font-size:2rem}}`;
+document.head.append(experienceStyles);
+
 const itinerary = suggestedItineraries[currentPage];
 if (itinerary) {
   const section = document.createElement('section');
