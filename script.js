@@ -5,6 +5,7 @@ document.querySelectorAll('[data-whatsapp]').forEach((link) => {
   link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
+  link.classList.add('whatsapp-action');
 });
 
 const quickContacts = document.createElement('nav');
@@ -31,7 +32,7 @@ if (isRoutePage) {
     <a class="brand" href="../index.html" aria-label="Voltar para a página inicial da RUD Viagens"><img class="brand-logo" src="../assets/logo-rud-instagram.jpg" alt="RUD Viagens"></a>
     <nav class="route-nav" aria-label="Navegação do roteiro">
       <a class="route-back" href="../index.html#roteiros"><span aria-hidden="true">←</span> Todos os roteiros</a>
-      <a class="route-message" href="https://wa.me/${phone}?text=${encodeURIComponent('Olá! Quero tirar uma dúvida sobre este roteiro.')}" target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+      <a class="route-message whatsapp-action" href="https://wa.me/${phone}?text=${encodeURIComponent('Olá! Quero tirar uma dúvida sobre este roteiro.')}" target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
     </nav>`;
 }
 document.querySelectorAll('.brand').forEach((brand) => {
@@ -59,6 +60,10 @@ document.head.append(contactStyles);
 const featuredCardStyles = document.createElement('style');
 featuredCardStyles.textContent = `.feature-image{position:relative;height:230px;isolation:isolate}.feature-image>img:first-child{width:100%;height:100%;object-fit:cover;filter:saturate(1.08)}.feature-shade{position:absolute;inset:0;background:linear-gradient(135deg,#063a6260,#f36c2145);z-index:1}.feature-image .feature-logo{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);width:88px!important;height:88px!important;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 10px 24px #061f3480}.route-card--feature:hover .feature-logo{transform:translate(-50%,-50%) scale(1.06)}@media(max-width:760px){.feature-image{height:245px}}`;
 document.head.append(featuredCardStyles);
+
+const whatsappStyles = document.createElement('style');
+whatsappStyles.textContent = `.whatsapp-action{background:#25d366!important;color:#fff!important;border:1px solid #1aae56!important;border-radius:999px!important;box-shadow:0 5px 14px #16854d3d!important;text-shadow:none!important}.whatsapp-action:hover{background:#1eb95c!important;color:#fff!important;transform:translateY(-1px)}.whatsapp-action span{color:inherit!important}.button.whatsapp-action{padding:.9rem 1.35rem}.nav-cta.whatsapp-action{background:#25d366!important}.route-nav .route-message{color:#fff!important;background:#25d366!important}@media(max-width:760px){.route-nav .route-message{font-size:.72rem;padding:.65rem .75rem}.button.whatsapp-action{width:100%}}`;
+document.head.append(whatsappStyles);
 
 if (isRoutePage) {
   document.body.classList.add('route-page');
