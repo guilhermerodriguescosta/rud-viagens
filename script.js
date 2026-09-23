@@ -76,6 +76,18 @@ document.querySelectorAll('.whatsapp-action').forEach((link) => {
     link.insertAdjacentHTML('afterbegin', `<img class="whatsapp-action-icon" src="${assetPrefix}assets/icons/whatsapp.svg" alt="" aria-hidden="true">`);
   }
 });
+document.querySelectorAll('.card-footer > span').forEach((price) => {
+  if (!price.querySelector('.price-disclaimer')) price.insertAdjacentHTML('beforeend', '<small class="price-disclaimer">Valor referencial.</small>');
+});
+document.querySelectorAll('.detail-price, .cruise-price').forEach((price) => {
+  if (price.firstChild.nodeType === Node.TEXT_NODE) price.firstChild.nodeValue = 'A partir de ';
+  if (!price.querySelector('.price-disclaimer')) price.insertAdjacentHTML('beforeend', '<small class="price-disclaimer">Valor referencial, sujeito a data e disponibilidade.</small>');
+});
+document.querySelectorAll('.route-content h2').forEach((heading) => {
+  if (!heading.textContent.includes('R$')) return;
+  heading.textContent = heading.textContent.replace('Diárias a partir de', 'Seguro a partir de');
+  if (!heading.nextElementSibling?.classList.contains('price-disclaimer')) heading.insertAdjacentHTML('afterend', '<p class="price-disclaimer">Valor referencial, sujeito ao destino, período, idade e plano escolhido.</p>');
+});
 document.querySelectorAll('footer a[data-whatsapp], footer a[href*="instagram.com"]').forEach((link) => link.remove());
 document.querySelectorAll('footer div').forEach((group) => {
   if (!group.textContent.trim()) group.remove();
@@ -100,6 +112,10 @@ document.head.append(featuredCardStyles);
 const whatsappStyles = document.createElement('style');
 whatsappStyles.textContent = `.whatsapp-action{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;background:#fff!important;color:#16384d!important;border:1px solid #d5e4e2!important;border-radius:999px!important;box-shadow:0 7px 18px #093a6226!important;text-shadow:none!important;font-weight:700!important}.whatsapp-action:hover{background:#f3fbf7!important;color:#087f42!important;border-color:#8ad9aa!important;transform:translateY(-1px)}.whatsapp-action-icon{width:19px!important;height:19px!important;flex:0 0 19px!important}.whatsapp-action span{color:inherit!important}.button.whatsapp-action{padding:.9rem 1.35rem}.nav-cta.whatsapp-action{background:#fff!important}.route-nav .route-message{color:#16384d!important;background:#fff!important}@media(max-width:760px){.route-nav .route-message{font-size:.72rem;padding:.65rem .75rem}.button.whatsapp-action{width:100%}}`;
 document.head.append(whatsappStyles);
+
+const priceStyles = document.createElement('style');
+priceStyles.textContent = `.price-disclaimer{display:block;margin-top:.25rem;color:#68808d;font-size:.68rem;font-weight:500;letter-spacing:0;text-transform:none;line-height:1.35}.card-footer .price-disclaimer{font-size:.62rem}.route-card--insurance .price-disclaimer{color:#d9e8f1}.cruise-price .price-disclaimer{color:#b9d8e4}.route-content .price-disclaimer{margin:.25rem 0 1.5rem;color:#526a78;font-size:.88rem}`;
+document.head.append(priceStyles);
 
 if (isRoutePage) {
   document.body.classList.add('route-page');
