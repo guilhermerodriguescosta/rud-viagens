@@ -1,12 +1,17 @@
 const phone = '5519999287766';
+const currentPage = location.pathname.split('/').pop();
 
-document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-  const message = link.dataset.message || 'Olá! Quero falar com a RUD Viagens.';
-  link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.classList.add('whatsapp-action');
-});
+const setupWhatsAppLinks = (scope = document) => {
+  scope.querySelectorAll('[data-whatsapp]').forEach((link) => {
+    const message = link.dataset.message || 'Olá! Quero falar com a RUD Viagens.';
+    link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.classList.add('whatsapp-action');
+  });
+};
+
+setupWhatsAppLinks();
 
 const quickContacts = document.createElement('nav');
 quickContacts.className = 'quick-contacts';
@@ -34,6 +39,28 @@ if (isRoutePage) {
       <a class="route-back" href="../index.html#roteiros"><span aria-hidden="true">←</span> Todos os roteiros</a>
       <a class="route-message whatsapp-action" href="https://wa.me/${phone}?text=${encodeURIComponent('Olá! Quero tirar uma dúvida sobre este roteiro.')}" target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span aria-hidden="true">→</span></a>
     </nav>`;
+
+  const cruisePages = {
+    'msc-musica.html': {
+      title: 'MSC Música', price: 'R$ 2.606 por pessoa', nights: '3 noites', route: 'Santos • Búzios • Santos', image: '../assets/galerias/msc-musica/capa.png',
+      intro: 'Uma experiência em alto-mar com conforto, gastronomia e entretenimento para aproveitar todos os momentos a bordo.',
+      features: ['Café da manhã, almoço e jantar', 'Taxas portuárias', 'Piscinas e festas temáticas', 'Shows e entretenimento'],
+      message: 'Olá! Quero cotar cabine e próxima saída do MSC Música.'
+    },
+    'costa-diadema.html': {
+      title: 'Costa Diadema', price: 'R$ 3.116 por pessoa', nights: '4 noites', route: 'Santos • Ilhabela • Itajaí • Santos', image: '../assets/galerias/costa-diadema/capa.png',
+      intro: 'Conforto, diversão e paisagens em uma viagem para relaxar e descobrir novos destinos pelo mar.',
+      features: ['Restaurantes e opções de lazer', 'Shows e programação de entretenimento', 'Piscinas e áreas de convivência', 'Cabines para diferentes perfis'],
+      message: 'Olá! Quero cotar a próxima saída do Costa Diadema.'
+    }
+  };
+  const cruise = cruisePages[currentPage];
+  if (cruise) {
+    document.querySelector('main').innerHTML = `
+      <section class="cruise-hero"><div class="cruise-wrap"><div class="cruise-image"><img src="${cruise.image}" alt="Arte do cruzeiro ${cruise.title}"></div><div class="cruise-copy"><p class="eyebrow">CRUZEIRO EM DESTAQUE</p><h1>${cruise.title}</h1><p class="cruise-intro">${cruise.intro}</p><p class="cruise-price">A partir de <strong>${cruise.price}</strong></p><a class="button whatsapp-action" data-whatsapp data-message="${cruise.message}">Quero este cruzeiro <span>→</span></a></div></div></section>
+      <section class="cruise-details"><div class="cruise-wrap"><div class="cruise-facts"><article><span>NOITES</span><strong>${cruise.nights}</strong></article><article><span>ROTA</span><strong>${cruise.route}</strong></article><article><span>EMBARQUE</span><strong>Santos — SP</strong></article></div><div class="cruise-content"><div><p class="eyebrow">A EXPERIÊNCIA A BORDO</p><h2>Seu tempo no mar, do seu jeito.</h2><p>Escolha sua cabine e aproveite uma estrutura pensada para famílias, casais e viajantes que buscam uma pausa completa.</p></div><ul>${cruise.features.map((feature) => `<li>${feature}</li>`).join('')}</ul></div><p class="cruise-notice">Datas, cabines, preços e condições de parcelamento variam conforme disponibilidade. Confirme a próxima saída pelo WhatsApp.</p><div class="cruise-cta"><div><p>PRONTO PARA EMBARCAR?</p><h2>Vamos encontrar a melhor cabine para você.</h2></div><a class="button whatsapp-action" data-whatsapp data-message="${cruise.message}">Falar no WhatsApp <span>→</span></a></div></div></section>`;
+    setupWhatsAppLinks(document.querySelector('main'));
+  }
 }
 document.querySelectorAll('.brand').forEach((brand) => {
   brand.innerHTML = `<img class="brand-logo" src="${assetPrefix}assets/logo-rud-instagram.jpg" alt="RUD Viagens"><span class="brand-name">RUD <b>VIAGENS</b></span>`;
@@ -90,6 +117,13 @@ if (isRoutePage) {
   document.head.append(routeStyles);
 }
 
+const cruiseStyles = document.createElement('style');
+cruiseStyles.textContent = `
+  .cruise-hero{padding:4.5rem 0;background:radial-gradient(circle at 82% 12%,#2d85ad 0,#093a62 40%,#062944 100%);color:#fff}.cruise-wrap{width:min(1120px,calc(100% - 3rem));margin:auto}.cruise-hero .cruise-wrap{display:grid;grid-template-columns:minmax(290px,.88fr) minmax(340px,1fr);gap:4.5rem;align-items:center}.cruise-image{padding:.65rem;background:#ffffff20;border:1px solid #ffffff30;border-radius:22px;box-shadow:0 22px 48px #001d3380}.cruise-image img{display:block;width:100%;max-height:600px;object-fit:contain;border-radius:14px;background:#fff}.cruise-copy .eyebrow,.cruise-content .eyebrow{color:#ffb16d;font-weight:700;font-size:.74rem;letter-spacing:.15em}.cruise-copy h1{font:700 clamp(3rem,5.4vw,5.2rem)/.98 Georgia,serif;color:#fff;margin:.4rem 0 1.1rem}.cruise-intro{max-width:560px;font-size:1.1rem;line-height:1.65;color:#e5f2f6}.cruise-price{margin:1.8rem 0;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#b9d8e4}.cruise-price strong{display:block;margin-top:.3rem;font:700 2.25rem Georgia,serif;letter-spacing:0;text-transform:none;color:#ffb16d}.cruise-details{padding:4.5rem 0;background:#f5f8f8}.cruise-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:4rem}.cruise-facts article{padding:1.3rem 1.4rem;background:#fff;border-top:4px solid #f36c21;border-radius:0 0 12px 12px;box-shadow:0 12px 24px #093a6212}.cruise-facts span{display:block;color:#f36c21;font-size:.68rem;font-weight:700;letter-spacing:.13em}.cruise-facts strong{display:block;margin-top:.45rem;color:#093a62;line-height:1.35}.cruise-content{display:grid;grid-template-columns:1fr .85fr;gap:4rem;align-items:start}.cruise-content h2,.cruise-cta h2{font:700 clamp(2rem,3vw,3rem)/1.08 Georgia,serif;color:#093a62;margin:.45rem 0 1rem}.cruise-content p{color:#526a78;line-height:1.75}.cruise-content ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}.cruise-content li{padding:.95rem 1rem;border-radius:10px;background:#e5f1f3;color:#16384d;font-weight:700}.cruise-content li:before{content:'✓';margin-right:.7rem;color:#087f42}.cruise-notice{margin:3rem 0;padding:1rem 1.2rem;border-left:4px solid #f36c21;background:#fff4e8;color:#6f553f;line-height:1.6}.cruise-cta{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding:2.4rem;background:linear-gradient(110deg,#e95d17,#f88032);border-radius:16px}.cruise-cta p{margin:0;color:#fff;font-size:.72rem;letter-spacing:.14em;font-weight:700}.cruise-cta h2{margin:.4rem 0 0;color:#fff;max-width:600px}.cruise-cta .whatsapp-action{flex:0 0 auto;white-space:nowrap}
+  @media(max-width:760px){.cruise-hero,.cruise-details{padding:2.5rem 0}.cruise-wrap{width:min(100% - 2rem,1120px)}.cruise-hero .cruise-wrap,.cruise-content{grid-template-columns:1fr;gap:2rem}.cruise-copy h1{font-size:3rem}.cruise-facts{grid-template-columns:1fr;margin-bottom:2.5rem}.cruise-cta{display:block;padding:1.6rem}.cruise-cta .whatsapp-action{margin-top:1.4rem;width:100%}}
+`;
+document.head.append(cruiseStyles);
+
 const menuButton = document.querySelector('.menu-button');
 const menu = document.querySelector('#menu');
 if (menuButton && menu) menuButton.addEventListener('click', () => {
@@ -115,7 +149,6 @@ const galleryImages = {
   'jalapao.html': ['jalapao/jalapao-1.png', 'jalapao/jalapao-2.png', 'jalapao/jalapao-3.png'],
 };
 
-const currentPage = location.pathname.split('/').pop();
 if (galleryImages[currentPage]) {
   const gallery = document.createElement('section');
   gallery.setAttribute('aria-label', 'Galeria do destino');
