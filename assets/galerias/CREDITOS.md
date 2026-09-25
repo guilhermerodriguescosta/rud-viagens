@@ -25,3 +25,9 @@ As imagens abaixo foram obtidas do Wikimedia Commons e mantêm as respectivas li
 3. `foto-3.jpg` — [Parque Estadual do Jalapão](https://commons.wikimedia.org/wiki/File:Parque_Estadual_do_Jalap%C3%A3o_Raphael_Coelho_(01).jpg), Raphael Coelho, CC BY-SA 4.0.
 4. `foto-4.jpg` — [Dunas — Jalapão](https://commons.wikimedia.org/wiki/File:Dunas_-_Jalap%C3%A3o_-_Tocantins_-_Brasil.jpg), Marcelo85photo, CC BY-SA 3.0.
 5. `foto-5.jpg` — [Parque Estadual do Jalapão](https://commons.wikimedia.org/wiki/File:Parque_Estadual_do_Jalap%C3%A3o_Jo%C3%A3o_Paulo_Marques_Dandretta_(21).jpg), João D'Andretta, CC BY-SA 4.0.
+# Imagens provisórias
+
+- `lencois-maranhenses/capa.jpg`: fotografia de Lençóis Maranhenses por Unsplash, baixada de `photo-1591870510323-e20965f14d69`.
+- `sao-sebastiao/capa.jpg`: fotografia de São Sebastião por Gabriel Ramos / Unsplash, baixada de `photo-1651597966483-7ab6b544410c`.
+
+Essas imagens são temporárias e devem ser substituídas pelas fotos autorais da Rud quando estiverem disponíveis.
