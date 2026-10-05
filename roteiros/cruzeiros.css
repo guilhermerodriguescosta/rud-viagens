@@ -1,0 +1,37 @@
+.cruise-hero{background:linear-gradient(115deg,#e9f4f4,#fff5e9)}
+.cruise-shortcuts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.cruise-shortcuts a{border:1px solid var(--blue);border-radius:999px;padding:.65rem 1rem;color:var(--blue);font-size:.85rem;font-weight:800}
+.cruise-company{padding:4.5rem 0;scroll-margin-top:1rem}
+.cruise-company:nth-child(even){background:var(--sand)}
+.cruise-company__heading h2{margin:.2rem 0;color:var(--navy);font:700 clamp(2.6rem,5vw,4.4rem)/1.05 var(--serif)}
+.cruise-company__heading>p:last-child{margin:.5rem 0 0;color:var(--muted)}
+.cruise-subsection{margin-top:3rem}
+.cruise-subsection h3{margin:0 0 .8rem;color:var(--navy);font:700 clamp(1.7rem,3vw,2.4rem)/1.1 var(--serif)}
+.cruise-subsection__heading{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.cruise-subsection__heading>span{color:var(--muted);font-size:.84rem;font-weight:700}
+.cruise-photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin:0;padding:0;list-style:none}
+.cruise-photo-card{display:flex;flex-direction:column;width:100%;height:100%;overflow:hidden;border:1px solid var(--line);padding:0;background:#fff;color:var(--navy);text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.cruise-photo-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #092a4026}
+.cruise-photo-card img{display:block;width:100%;height:170px;object-fit:cover;background:#dbe8ee}
+.cruise-photo-card span{padding:.9rem 1rem;font:700 1.22rem var(--serif)}
+.cruise-routes{margin:0;border-top:1px solid var(--line);padding:0;list-style:none}
+.cruise-route{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:1rem;border-bottom:1px solid var(--line);padding:1.05rem 1rem;background:#fff}
+.cruise-route__path{min-width:0;color:var(--navy);font-size:.9rem;font-weight:700;overflow-wrap:anywhere}
+.cruise-route__path small{display:block;margin-top:.35rem;color:var(--muted);font-size:.8rem;font-weight:400}
+.cruise-route__nights{color:var(--green);font-size:.83rem;font-weight:800;white-space:nowrap}
+.cruise-company__contact{margin-top:3rem}
+.cruise-notice{margin:3rem 0}
+.cruise-carousel{width:min(100vw - 2rem,1000px);max-width:none;max-height:calc(100vh - 2rem);margin:auto;overflow:auto;border:0;border-radius:10px;padding:0;background:#fff;box-shadow:0 24px 65px #061a2b77}
+.cruise-carousel::backdrop{background:#061a2be0}
+.cruise-carousel__panel{padding:1.2rem}
+.cruise-carousel__header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.cruise-carousel__header h2{margin:0;color:var(--navy);font:700 clamp(1.6rem,4vw,2.5rem)/1.1 var(--serif)}
+.cruise-carousel__close,.cruise-carousel__prev,.cruise-carousel__next{border:0;border-radius:50%;background:var(--navy);color:#fff;cursor:pointer;font-size:1.3rem;font-weight:800}
+.cruise-carousel__close{flex:0 0 2.5rem;height:2.5rem}
+.cruise-carousel__stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:240px;background:#edf3f5}
+.cruise-carousel__stage img{display:block;width:100%;max-height:calc(100vh - 11rem);min-height:240px;object-fit:contain}
+.cruise-carousel__prev,.cruise-carousel__next{position:absolute;top:50%;z-index:1;width:2.8rem;height:2.8rem;transform:translateY(-50%);background:#093a62e8}
+.cruise-carousel__prev{left:.7rem}
+.cruise-carousel__next{right:.7rem}
+.cruise-carousel__count{margin:.75rem 0 0;color:var(--muted);font-size:.85rem;font-weight:800;text-align:center}
+@media(max-width:760px){.cruise-shortcuts{position:static;display:flex;align-items:flex-start;flex-direction:row;gap:.7rem;padding:0;background:none;box-shadow:none}.cruise-company{padding:3.5rem 0}.cruise-subsection{margin-top:2.5rem}.cruise-subsection__heading{align-items:flex-start}.cruise-subsection__heading>span{max-width:6rem;text-align:right}.cruise-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.cruise-photo-card img{height:125px}.cruise-photo-card span{font-size:1rem}.cruise-route{grid-template-columns:1fr;gap:.25rem}.cruise-route__path{font-size:.83rem}.cruise-carousel{width:calc(100vw - 1rem);max-height:calc(100vh - 1rem)}.cruise-carousel__panel{padding:.7rem}.cruise-carousel__stage img{max-height:calc(100vh - 10rem)}.cruise-carousel__prev{left:.3rem}.cruise-carousel__next{right:.3rem}}

@@ -6,7 +6,43 @@ const RUD_CATALOG = {featured:[
 {name:'São Sebastião',category:'LITORAL NORTE',short:'Praias, surf, trilhas e natureza em uma experiência Rud.',href:'roteiros/sao-sebastiao.html',image:'assets/galerias/sao-sebastiao/capa.jpg',alt:'Praia de São Sebastião'},
 {name:'Chapada das Mesas',category:'CACHOEIRAS E CERRADO',short:'Cânions, cachoeiras e cenários marcantes no sul do Maranhão.',href:'roteiros/chapada-das-mesas.html',image:'assets/galerias/chapada-das-mesas/foto-1.jpg',alt:'Cachoeira na Chapada das Mesas'},
 {name:'Cruzeiros',category:'VIAJAR TAMBÉM É NAVEGAR',short:'O navio, os destinos e cada momento a bordo fazem parte da viagem.',href:'roteiros/cruzeiros.html',image:'assets/galerias/costa-diadema/capa.png',alt:'Cruzeiro Rud Viagens',featuredWide:true}
-],cruises:[
-{name:'MSC Música',image:'../assets/galerias/msc-musica/capa.png',route:'Santos • Búzios • Santos',duration:'3 noites',message:'Olá! Quero saber sobre cabines e a próxima saída do MSC Música.'},
-{name:'Costa Diadema',image:'../assets/galerias/costa-diadema/capa.png',route:'Santos • Ilhabela • Itajaí • Santos',duration:'4 noites',message:'Olá! Quero saber sobre cabines e a próxima saída do Costa Diadema.'}
+],cruiseCompanies:[
+{
+ id:'msc',name:'MSC Cruzeiros',message:'Olá! Quero conhecer os cruzeiros MSC com embarque em Santos na temporada 2026/27.',
+ ships:[
+  {name:'MSC Virtuosa',image:'https://www.datocms-assets.com/55385/1756986748-msc-virtuosa.jpg?auto=format'},
+  {name:'MSC Divina',image:'https://www.datocms-assets.com/55385/1760977766-msc-divina-1.jpg?auto=format'},
+  {name:'MSC Musica',image:'../assets/galerias/msc-musica/capa.png'},
+  {name:'MSC Seaview',image:'https://www.datocms-assets.com/55385/1776173849-msc-seaview_2.avif?auto=format'}
+ ],
+ routes:[
+  {ship:'MSC Virtuosa',nights:3,ports:['Santos','Búzios','Santos']},
+  {ship:'MSC Virtuosa',nights:7,ports:['Santos','Búzios','Salvador','Maceió','Santos']},
+  {ship:'MSC Virtuosa',nights:7,ports:['Santos','Búzios','Salvador','Ilhabela','Santos'],note:'Réveillon com observação dos fogos de Copacabana durante a navegação'},
+  {ship:'MSC Divina',nights:3,ports:['Santos','Búzios','Santos']},
+  {ship:'MSC Divina',nights:4,ports:['Santos','Ilha Grande','Búzios','Santos']},
+  {ship:'MSC Divina',nights:5,ports:['Santos','Ilha Grande','Búzios','Ilhabela','Santos']},
+  {ship:'MSC Divina',nights:7,ports:['Santos','Balneário Camboriú','Punta del Este','Buenos Aires','Santos']},
+  {ship:'MSC Divina',nights:8,ports:['Santos','Balneário Camboriú','Punta del Este','Montevidéu','Buenos Aires','Santos']},
+  {ship:'MSC Musica',nights:3,ports:['Santos','Búzios','Santos']},
+  {ship:'MSC Musica',nights:4,ports:['Santos','Búzios','Ilha Grande','Santos']},
+  {ship:'MSC Musica',nights:4,ports:['Santos','Ilha Grande','Ilhabela','Santos']},
+  {ship:'MSC Musica',nights:8,ports:['Santos','Montevidéu','Buenos Aires','Punta del Este','Santos']},
+  {ship:'MSC Musica',nights:9,ports:['Santos','Montevidéu','Buenos Aires','Punta del Este','Balneário Camboriú','Santos']},
+  {ship:'MSC Seaview',nights:3,ports:['Santos','Búzios','Santos']},
+  {ship:'MSC Seaview',nights:7,ports:['Santos','Balneário Camboriú','Punta del Este','Buenos Aires','Santos']},
+  {ship:'MSC Seaview',nights:7,ports:['Santos','Balneário Camboriú','Montevidéu','Buenos Aires','Santos']},
+  {ship:'MSC Seaview',nights:8,ports:['Santos','Balneário Camboriú','Punta del Este','Montevidéu','Buenos Aires','Santos']}
+ ]
+},
+{
+ id:'costa',name:'Costa Cruzeiros',message:'Olá! Quero conhecer os cruzeiros Costa com embarque em Santos na temporada 2026/27.',
+ ships:[{name:'Costa Diadema',image:'../assets/galerias/costa-diadema/capa.png'}],
+ routes:[
+  {ship:'Costa Diadema',nights:3,ports:['Santos','Itajaí','Santos']},
+  {ship:'Costa Diadema',nights:3,ports:['Santos','Ilhabela','Itajaí','Santos']},
+  {ship:'Costa Diadema',nights:4,ports:['Santos','Ilhabela','Itajaí','Santos']},
+  {ship:'Costa Diadema',nights:7,ports:['Santos','Buenos Aires','Montevidéu','Itajaí','Santos']}
+ ]
+}
 ]};
