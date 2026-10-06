@@ -35,3 +35,8 @@
 .cruise-carousel__next{right:.7rem}
 .cruise-carousel__count{margin:.75rem 0 0;color:var(--muted);font-size:.85rem;font-weight:800;text-align:center}
 @media(max-width:760px){.cruise-shortcuts{position:static;display:flex;align-items:flex-start;flex-direction:row;gap:.7rem;padding:0;background:none;box-shadow:none}.cruise-company{padding:3.5rem 0}.cruise-subsection{margin-top:2.5rem}.cruise-subsection__heading{align-items:flex-start}.cruise-subsection__heading>span{max-width:6rem;text-align:right}.cruise-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.cruise-photo-card img{height:125px}.cruise-photo-card span{font-size:1rem}.cruise-route{grid-template-columns:1fr;gap:.25rem}.cruise-route__path{font-size:.83rem}.cruise-carousel{width:calc(100vw - 1rem);max-height:calc(100vh - 1rem)}.cruise-carousel__panel{padding:.7rem}.cruise-carousel__stage img{max-height:calc(100vh - 10rem)}.cruise-carousel__prev{left:.3rem}.cruise-carousel__next{right:.3rem}}
+
+.cruise-carousel__caption{margin:.4rem 0 0;color:var(--muted);font-size:.85rem;text-align:center;overflow-wrap:anywhere}
+.cruise-carousel__caption small{font-size:.72rem}
+.cruise-carousel__caption a{color:inherit}
+.cruise-carousel[data-photo-kind="destinations"] .cruise-carousel__stage img{max-height:calc(100vh - 15rem)}

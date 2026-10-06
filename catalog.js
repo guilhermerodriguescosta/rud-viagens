@@ -37,7 +37,7 @@ const RUD_CATALOG = {featured:[
 },
 {
  id:'costa',name:'Costa Cruzeiros',message:'Olá! Quero conhecer os cruzeiros Costa com embarque em Santos na temporada 2026/27.',
- ships:[{name:'Costa Diadema',image:'../assets/galerias/costa-diadema/capa.png'}],
+ ships:[{name:'Costa Diadema',image:'../assets/costa-diadema-sem-marca/01-costa-diadema-vista-externa-lateral.webp'}],
  routes:[
   {ship:'Costa Diadema',nights:3,ports:['Santos','Itajaí','Santos']},
   {ship:'Costa Diadema',nights:3,ports:['Santos','Ilhabela','Itajaí','Santos']},

@@ -50,17 +50,23 @@ cruiseDialog.innerHTML = `<div class="cruise-carousel__panel">
   <div class="cruise-carousel__header"><div><p class="eyebrow">GALERIA DE FOTOS</p><h2 id="cruise-carousel-title"></h2></div><button type="button" class="cruise-carousel__close" aria-label="Fechar galeria">×</button></div>
   <div class="cruise-carousel__stage"><button type="button" class="cruise-carousel__prev" aria-label="Foto anterior">←</button><img alt=""><button type="button" class="cruise-carousel__next" aria-label="Próxima foto">→</button></div>
   <p class="cruise-carousel__count" aria-live="polite"></p>
+  <p class="cruise-carousel__caption" hidden></p>
 </div>`;
 document.body.append(cruiseDialog);
 
 let activePhotos = [];
+let activePhotoDetails = [];
 let activeName = '';
 let activeIndex = 0;
 let opener = null;
 const carouselImage = cruiseDialog.querySelector('.cruise-carousel__stage img');
+const carouselCaption = cruiseDialog.querySelector('.cruise-carousel__caption');
 function showCruisePhoto() {
   carouselImage.src = activePhotos[activeIndex];
-  carouselImage.alt = `${activeName}, foto ${activeIndex + 1} de ${activePhotos.length}`;
+  const detail = activePhotoDetails[activeIndex];
+  carouselImage.alt = detail ? `${detail.label}, ${activeName}` : `${activeName}, foto ${activeIndex + 1} de ${activePhotos.length}`;
+  carouselCaption.hidden = !detail;
+  carouselCaption.textContent = detail ? detail.label : '';
   cruiseDialog.querySelector('.cruise-carousel__count').textContent = `${activeIndex + 1} de ${activePhotos.length}`;
 }
 function moveCruisePhoto(step) {
@@ -73,6 +79,8 @@ cruiseRoot.addEventListener('click', event => {
   const {photoKind, photoName} = card.dataset;
   activePhotos = RUD_CRUISE_PHOTOS[photoKind][photoName];
   if (!activePhotos?.length) return;
+  activePhotoDetails = photoKind === 'destinations' ? (RUD_CRUISE_PHOTO_DETAILS[photoName] || []) : [];
+  cruiseDialog.dataset.photoKind = photoKind;
   activeName = photoName;
   activeIndex = 0;
   opener = card;
