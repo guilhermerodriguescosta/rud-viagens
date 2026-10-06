@@ -10,10 +10,10 @@ const RUD_CATALOG = {featured:[
 {
  id:'msc',name:'MSC Cruzeiros',message:'Olá! Quero conhecer os cruzeiros MSC com embarque em Santos na temporada 2026/27.',
  ships:[
-  {name:'MSC Virtuosa',image:'https://www.datocms-assets.com/55385/1756986748-msc-virtuosa.jpg?auto=format'},
-  {name:'MSC Divina',image:'https://www.datocms-assets.com/55385/1760977766-msc-divina-1.jpg?auto=format'},
-  {name:'MSC Musica',image:'../assets/galerias/msc-musica/capa.png'},
-  {name:'MSC Seaview',image:'https://www.datocms-assets.com/55385/1776173849-msc-seaview_2.avif?auto=format'}
+  {name:'MSC Virtuosa',image:'../assets/msc-virtuosa-sem-marca/01-msc-virtuosa-vista-externa.jpg'},
+  {name:'MSC Divina',image:'../assets/msc-divina-sem-marca/01-msc-divina-vista-aerea-no-mar.webp'},
+  {name:'MSC Musica',image:'../assets/msc-musica-sem-marca/01-msc-musica-vista-externa-no-mar.webp'},
+  {name:'MSC Seaview',image:'../assets/msc-seaview-sem-marca/01-msc-seaview-vista-externa-no-mar.webp'}
  ],
  routes:[
   {ship:'MSC Virtuosa',nights:3,ports:['Santos','Búzios','Santos']},
