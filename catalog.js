@@ -7,7 +7,8 @@ const RUD_CATALOG = {destinations:[
 {name:'Cruzeiros',category:'VIAJAR TAMBÉM É NAVEGAR',short:'O navio, os destinos e cada momento a bordo fazem parte da viagem.',href:'roteiros/cruzeiros.html',image:'assets/galerias/costa-diadema/capa.png',alt:'Cruzeiro Rud Viagens'},
 {name:'Chapada das Mesas',category:'CACHOEIRAS E CERRADO',short:'Cânions, cachoeiras e cenários marcantes no sul do Maranhão.',href:'roteiros/chapada-das-mesas.html',image:'assets/galerias/chapada-das-mesas/foto-1.jpg',alt:'Cachoeira na Chapada das Mesas'},
 {name:'Bonito',category:'ÁGUAS CRISTALINAS',short:'Grutas, rios transparentes e experiências em meio à natureza de Mato Grosso do Sul.',href:'roteiros/bonito.html',image:'assets/galerias/bonito/capa.jpg',alt:'Gruta do Lago Azul em Bonito'},
-{name:'Foz do Iguaçu',category:'CATARATAS E NATUREZA',short:'A força das cataratas e passeios em uma paisagem inesquecível.',href:'roteiros/foz-do-iguacu.html',image:'assets/galerias/foz-do-iguacu/capa.jpg',alt:'Cataratas do Iguaçu'}
+{name:'Foz do Iguaçu',category:'CATARATAS E NATUREZA',short:'A força das cataratas e passeios em uma paisagem inesquecível.',href:'roteiros/foz-do-iguacu.html',image:'assets/galerias/foz-do-iguacu/capa.jpg',alt:'Cataratas do Iguaçu'},
+{name:'Morro de São Paulo',category:'PRAIAS DA BAHIA',short:'Praias, passeios de barco, aventura e noites animadas em uma ilha sem carros.',href:'roteiros/morro-de-sao-paulo.html',image:'assets/galerias/morro-de-sao-paulo/capa.jpg',alt:'Vista aérea de Morro de São Paulo e suas praias'}
 ],cruiseCompanies:[
 {
  id:'msc',name:'MSC Cruzeiros',message:'Olá! Quero conhecer os cruzeiros MSC com embarque em Santos na temporada 2026/27.',
