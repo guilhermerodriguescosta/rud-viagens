@@ -41,6 +41,7 @@ As fotos do Wikimedia Commons abaixo preservam a atribuição e a licença indic
 
 ### São Sebastião
 
+- `sao-sebastiao/foto-13.jpg` a `foto-17.jpg`: imagens enviadas por Rudy à Rud Viagens pelo WhatsApp em 27/10/2026. As três primeiras mostram cachoeiras e rio na Mata Atlântica; as duas últimas mostram praia ao entardecer. Os nomes exatos dos locais não foram informados.
 - `sao-sebastiao/foto-8.jpg`: [Maresias](https://commons.wikimedia.org/wiki/File:Maresias_beach.jpg), Ana Paula Hirama, CC BY-SA 2.0.
 - `sao-sebastiao/foto-9.jpg`: [Praia do Guaecá](https://commons.wikimedia.org/wiki/File:Praia_do_Guaec%C3%A1_02.jpg), Ajmcbarreto, CC BY-SA 4.0.
 - `sao-sebastiao/foto-10.jpg`: [Juquehy](https://commons.wikimedia.org/wiki/File:Juquehy.jpg), Cássio Toledo, CC BY 2.0.
